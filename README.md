@@ -16,7 +16,8 @@ Ils permettent de prendre en main les données, de comprendre les fonctions util
 
 [Application Shiny](https://github.com/datagistips/shiny-artif-app/)
 
-> [Un notebook déroule les différentes étapes de conception de l'application Shiny](notebook/8-notebook-shiny.Rmd)
+### 📢 Tuto
+[Un notebook déroule les différentes étapes de conception de l'application Shiny](notebook/8-notebook-shiny.Rmd)
 
 ## Données
 [Téléchargement](https://cerema.app.box.com/v/pnb-action7-indicateurs-ff)  | [Documentation](https://artificialisation.biodiversitetousvivants.fr/sites/artificialisation/files/fichiers/2020/03/description%20indicateurs.pdf)  

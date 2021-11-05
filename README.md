@@ -12,6 +12,8 @@ Ils permettent de prendre en main les données, de comprendre les fonctions util
 [Accéder aux notebooks](NOTEBOOK.md)
 
 ## Application Shiny
+![](https://raw.githubusercontent.com/datagistips/shiny-artif-app/master/thumbnail.png)
+
 [Application Shiny](https://github.com/datagistips/shiny-artif-app/)
 
 > [Un notebook déroule les différentes étapes de conception de l'application Shiny](notebook/8-notebook-shiny.Rmd)

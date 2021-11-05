@@ -1,0 +1,82 @@
+---
+title: 'Dataviz Notebook #1'
+output:
+  html_document:
+    df_print: paged
+---
+
+Dans ces notebooks, nous nous intéresserons aux flux d'artificialisation vers différents postes : habitat, activité,... au fil des ans, sur la période 2009 à 2020.
+
+Dans un premier temps, nous allons lire les données.
+
+---
+
+Chargeons la fameuse librairie tidyverse. Celle-ci contient des librairies essentielles telles que dplyr, magrittr (pour les pipes %>%),...
+```{r}
+library(tidyverse)
+```
+
+## Lecture
+Lisons notre fichier de données :
+```{r}
+flux <- read_csv("../data/obs_artif_conso_com_2009_2020_V2.csv")
+glimpse(flux)
+```
+
+## Contrôle
+Un petit souci : certaines colonnes sont de type caractères, alors qu'elles devraient être de type numérique. C'est le cas de surfcom20, par exemple.
+
+```{r}
+class(flux$surfcom20)
+```
+Listons les colonnes de type caractères :
+```{r}
+sapply(names(flux), function(x) class(flux[[x]]) == "character") %>% which %>% {names(flux)[.]}
+```
+Les colonnes artcom0920, artpop1217 et surfcom20 devraient être de type numérique.
+
+
+Recherchons les valeurs non numériques dans ces colonnes :
+```{r}
+w <- grep("^(-|[0-9]|\\.)*$", flux$artcom0920, perl = TRUE)
+flux$artcom0920[-w] %>% unique
+
+w <- grep("^(-|[0-9]|\\.)*$", flux$artpop1217, perl = TRUE)
+flux$artpop1217[-w] %>% unique
+
+w <- grep("^(-|[0-9]|\\.)*$", flux$surfcom20, perl = TRUE)
+flux$surfcom20[-w] %>% unique
+```
+
+Il s'agit des valeurs NULL.
+
+Quels sont les départements pour lesquels on a cette valeur (et donc pour lesquels on n'a pas de surface) ?
+```{r}
+flux$iddep[-w]
+```
+Il s'agit des départemments d'Outre-Mer.
+
+Nous pouvons relire le fichier en mentionnant cette NULL comme étant NA
+
+```{r}
+flux <- read_csv("../data/obs_artif_conso_com_2009_2020_V2.csv", na = c("", "NULL"))
+glimpse(flux)
+```
+
+```{r}
+which(flux$surfcom20 == "NULL")
+```
+
+## Export des données
+Exportons nos données de flux :
+```{r}
+saveRDS(flux, "../shinyapp-old/app1/flux.rds")
+```
+
+----
+!! Sketch de l'application
+!! Aller vers le Pradet pour voir la bascule
+!! Suivre le littoral
+!! Aller sur la Revest Les Eaux (travaux barrage 2011), Chateau Arnoux Saint Auban
+https://www.francebleu.fr/infos/meteo/de-gros-travaux-sur-le-barrage-du-revest-les-eaux-pour-anticiper-les-crues-1602086729
+http://www.var.gouv.fr/IMG/pdf/a536-avis_mrae_revest-2.pdf

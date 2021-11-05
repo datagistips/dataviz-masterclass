@@ -1,0 +1,3 @@
+[submodule "shinyapp"]
+	path = shinyapp
+	url = https://github.com/datagistips/shiny-artif-app.git

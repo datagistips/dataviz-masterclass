@@ -1,0 +1,150 @@
+---
+title: 'Dataviz Notebook #3'
+output:
+  html_document:
+    df_print: paged
+---
+# Premiers plots
+
+Lisons les données de flux et rappelons la fonction getStatsFlux :
+```{r}
+library(tidyverse)
+
+flux <- read_csv("../data/obs_artif_conso_com_2009_2020_V2.csv")
+
+source("helpers.R", encoding = "UTF-8")
+```
+
+Nous avons notre fonction pour voir les flux par année, pour une commune donnée :
+```{r}
+df <- flux %>% getStatsFlux("13001")
+```
+
+Maintenant que nous parvenons à récupérer les stats bien formatées, nous pouvons tenter le graphique des flux d'artificialisation sur Aix en Provence :
+
+```{r}
+library(ggplot2)
+
+p <- ggplot(data = df, 
+       aes(x = year, 
+           y = value,
+           fill = type)) +
+  geom_bar(stat = "identity")
+
+p
+```
+C'est vraiment le graphique le plus basique que nous puissions réaliser.
+
+Nous pouvons en changer quelques éléments, améliorer l'esthétique :
+
+```{r}
+# Ordre des types
+df$type <- as.character(df$type)
+df$type <- factor(df$type, levels = c("Habitat", "Activité", "Mixte", "Inconnu"))
+
+# Plot
+p <- ggplot(data = df, 
+       aes(x = year, 
+           y = value,
+           fill = type)) +
+  geom_bar(stat = "identity") +
+  theme(
+        axis.title.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.text.x = element_text(vjust = 3),
+        axis.ticks.y = element_blank(),
+        axis.title.y = element_blank(),
+        panel.border = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        legend.position = "bottom",
+        legend.title = element_blank(),
+        plot.title = element_text(face = "bold", size = 10, colour = "grey60"),
+        legend.text = element_text(size = 8)
+        ) +
+  ggtitle("Flux d'artificialisation par année en Ha") + 
+  scale_y_continuous(name = "Ha", expand = c(0, 0))
+p
+```
+Nous avons allégé au maximum le graphique et nous avons mis la légende en bas pour qu'elle n'écrase pas le graphique
+
+Mais les couleurs ne sont pas forcément encore tops !..
+
+## Couleur
+Nous utilisons la modélisation de couleurs HCL (pour Hue Chroma Luminance).
+
+En HCL, une couleur est définie selon tris paramètres :
+- Hue, qui définit la teinte (bleue, rouge, ...) d'une couleur
+- Chroma son côté coloré (colourfulness)
+- Luminance sa luminosité
+
+Nous allons prendre 4 couleurs pour notre palette :
+- Bleue pour l'habitat
+- Rouge pour l'activité (le rouge rappelle l'activité)
+- Magenta pour mixte (un peu un mélange des deux premiers)
+- Gris pour la catégorie Inconnu (gris est une couleur neutre qui symbolise bien l'inconnu)
+
+Par défaut, le chroma sera fixé à 50, la luminosité à 80 (sur une échelle de 0 à 100) :
+```{r}
+library(colorspace)
+
+colorBlue    <- hcl(h = 220,
+                    c = 50, 
+                    l = 80, fixup = TRUE)
+
+colorRed     <- hcl(h = 4, 
+                    c = 50, 
+                    l = 80, fixup = TRUE)
+
+colorMagenta <- hcl(h = 300, 
+                    c = 50, 
+                    l = 80, fixup = TRUE)
+
+colorGrey    <- hcl(h = 0, 
+                    c = 0, 
+                    l = 80, fixup = TRUE)
+
+myPalette <- c("blue" = colorBlue,
+                    "red" = colorRed,
+                    "magenta" = colorMagenta,
+                    "grey" = colorGrey)
+```
+
+Exportons notre palette de couleurs pour la réutiliser plus tard :
+```{r}
+saveRDS(myPalette, "myPalette.rds")
+```
+
+Testons notre palette :
+
+```{r}
+demoplot(myPalette, "bar")
+```
+Voici une représentation des couleurs dans l'espace HCL :
+
+```{r}
+hclplot(myPalette)
+```
+
+Utilisons cette nouvelle palette de couleurs dans notre graphique :
+
+```{r}
+p +
+  scale_fill_manual(
+      name = "Flux\nd'artificialisation\n2009-2020",
+      labels = c("Habitat", "Activité", "Mixte", "Inconnu"),
+      values = as.character(myPalette)
+    )
+```
+Utilisons une couleur plus "punchy" pour le magenta en mettant un chrom de 100 :
+```{r}
+p + scale_fill_manual(
+      name = "Flux\nd'artificialisation\n2009-2020",
+      labels = c("Habitat", "Activité", "Mixte", "Inconnu"),
+      values = c(colorBlue, 
+                 colorRed, 
+                 hcl(h = 300, c = 100, l = 80), # Magenta
+                 colorGrey)
+    )
+
+```

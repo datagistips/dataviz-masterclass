@@ -1,0 +1,66 @@
+---
+title: 'Dataviz Notebook #2'
+output:
+  html_document:
+    df_print: paged
+---
+Dans ce notebook, nous allons voir comment afficher les statistiques relatives aux communes affichées dans la carte.
+
+Chargeons aussi la librairie sf :
+```{r}
+library(tidyverse)
+library(sf)
+```
+Lisons nos données administratives :
+```{r}
+comms <- st_read("../data/COMMUNE_CARTO.shp") %>% st_set_crs(2154) %>% st_transform(4326)
+```
+
+Exportons-les pour un usage ultérieur:
+```{r}
+saveRDS(comms %>% filter(INSEE_REG == 93), "comms.rds")
+```
+
+Dans l'appli, lorsqu'on déplace la carte, les coordonnées sont retournées à l'utilisateur sous cette forme :
+```
+$lat
+[1] 43.2829
+
+$lng
+[1] 6.2507
+
+$.nonce
+[1] 0.8278805
+
+```
+
+On crée un point depuis les coordonnées comme ceci :
+```{r}
+pt <- c(6.2507, 43.2829) %>% st_point %>% st_sfc %>% st_set_crs(4326)
+```
+
+On intersecte les communes avec le point :
+```{r}
+i <- st_intersects(comms, pt)
+```
+
+On détermine la commune au point :
+```{r}
+w <- which(sapply(i, function(x) length(x) != 0))
+codeInsee <- comms$INSEE_COM[w]
+```
+On peut en faire une fonction `getCommCenter` :
+```{r}
+getCommCenter <- function(comms, coords) {
+    pt <- coords %>% st_point %>% st_sfc %>% st_set_crs(4326)
+    i <- st_intersects(comms, pt)
+    w <- which(sapply(i, function(x) length(x) != 0))
+    codeInsee <- comms$INSEE_COM[w]
+    return(codeInsee)
+}
+```
+
+Déterminons la commune qui est au point de coordonnées 5.398602, 43.53609
+```{r}
+comms %>% getCommCenter(c(5.398602, 43.53609))
+```

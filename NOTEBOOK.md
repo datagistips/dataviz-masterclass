@@ -1,4 +1,4 @@
-# Notebook
+# Notebooks
 Notebooks présidant à la création de l'application Shiny au format R Markdown
 
 [Lecture des données de flux (R Markdown)](1-notebook-flux.Rmd) | 

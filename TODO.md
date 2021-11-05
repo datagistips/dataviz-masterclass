@@ -1,10 +1,12 @@
-## 4 Novembre
+## 5 Novembre
 - [ ] Notebook shiny
 - [ ] Déployer sur shinyapps datagistips
 - [ ] subtree
 - [ ] Améliorer les notebooks
 - [ ] Mettre les warnings false, etc.. dans les Rmd
 - [ ] TOC
+- [ ] Images de slides
+- [ ] Exemples d'applications
 
 ## 3 Novembre
 - [x] paged pour les tableaux

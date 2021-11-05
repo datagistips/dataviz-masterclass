@@ -7,6 +7,7 @@
 - [ ] TOC
 - [ ] Images de slides
 - [ ] Exemples d'applications
+- [ ] Séparer en ui.R, server.R, global.R et helpers.R
 
 ## 3 Novembre
 - [x] paged pour les tableaux

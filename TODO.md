@@ -1,11 +1,11 @@
 ## 5 Novembre
-- [ ] Notebook shiny
+- [x] Notebook shiny
 - [ ] Déployer sur shinyapps datagistips
-- [ ] subtree
-- [ ] Améliorer les notebooks
-- [ ] Mettre les warnings false, etc.. dans les Rmd
-- [ ] TOC
-- [ ] Images de slides
+- [x] subtree > submodule
+- [x] Améliorer les notebooks
+- [x] Mettre les warnings false, etc.. dans les Rmd
+- [x] TOC
+- [x] Images de slides
 - [ ] Exemples d'applications
 - [ ] Séparer en ui.R, server.R, global.R et helpers.R
 

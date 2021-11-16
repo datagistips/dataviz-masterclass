@@ -1,0 +1,74 @@
+---
+title: 'Dataviz Notebook #7'
+output:
+  html_document:
+    df_print: paged
+    toc: false
+    toc_depth: 2
+    toc_float: true
+---
+
+Dans ce notebook, nous allons créer une représentation en treemap des flux d'artificialisation.
+
+Cette représentation est assez originale pour représenter des proportions.
+
+Chargeons les données et reconstitutions notre palette de couleurs précédente :
+```{r message = FALSE, warning = FALSE}
+library(tidyverse)
+
+flux <- read_csv("../data/obs_artif_conso_com_2009_2020_V2.csv", na = c("", "NULL"))
+
+# Palette 
+colorBlue    <- hcl(h = 220, c = 50, l = 80, fixup = TRUE)
+colorRed     <- hcl(h = 4, c = 50, l = 80, fixup = TRUE)
+colorMagenta <- hcl(h = 300, c = 50, l = 80, fixup = TRUE)
+colorGrey    <- hcl(h = 0, c = 0, l = 80, fixup = TRUE)
+
+myPalette <- c("blue" = colorBlue,
+                "red" = colorRed,
+                "magenta" = colorMagenta,
+                "grey" = colorGrey)
+```
+
+Créons la fonction `makeTreemap`. On s'en servira dans l'application Shiny :
+```{r}
+library(plotly)
+
+makeTreemap <- function(flux, codeInsee) {
+  df <- flux %>% filter(idcom == codeInsee)
+  
+  df <- df %>% gather("variable",
+                      "value",
+                      c("arthab0920", "artact0920", "artmix0920", "artinc0920"))
+  
+  df$variable <- case_when(
+    df$variable == "arthab0920" ~ "Habitat",
+    df$variable == "artact0920" ~ "Activité",
+    df$variable == "artmix0920" ~ "Mixte",
+    df$variable == "artinc0920" ~ "NC"
+  )
+  
+  # Par. treemap
+  labels = df$variable
+  parents = rep("", nrow(df))
+  values = df$value
+  
+  fig <- plot_ly(
+    type="treemap",
+    labels=labels,
+    parents=parents,
+    values=values,
+    marker=list(colors = myPalette))
+  
+  fig
+}
+```
+
+Faisons la treemap de la commune d'Aix en Provence :
+```{r}
+flux %>% makeTreemap("13001")
+```
+Faisons la treemap sur Toulon :
+```{r}
+flux %>% makeTreemap("83137")
+```

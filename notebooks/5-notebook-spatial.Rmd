@@ -1,0 +1,80 @@
+---
+title: 'Dataviz Notebook #5'
+output:
+  html_document:
+    df_print: paged
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+Dans ce notebook, nous allons voir comment intégrer la dimension spatiale (requêtes spatiales), en préparation de la dimension cartographique de l'application Shiny.
+
+## Librairie sf
+Chargeons tidyverse, et la librairie sf
+```{r message = FALSE, warning = FALSE}
+library(tidyverse)
+library(sf)
+```
+
+## Contours administratifs
+Lisons nos données administratives [AdminExpress](https://geoservices.ign.fr/adminexpress#telechargement) en les reprojetant du Lambert 93 (EPSG:2154) vers le WGS84 (EPSG:4326) :
+```{r}
+comms <- st_read("../data/COMMUNE_CARTO/COMMUNE_CARTO.shp") %>% 
+  st_set_crs(2154) %>% 
+  st_transform(4326)
+```
+
+## Export
+Exportons les données sur la Région Sud pour un usage ultérieur, dans l'application Shiny par exemple :
+```{r}
+saveRDS(comms %>% filter(INSEE_REG == 93), "comms.rds")
+```
+
+## Coordonnées au clic
+Lorsqu'on cliquera sur la carte dans l'appli Shiny, les coordonnées seront retournées à l'utilisateur sous cette forme :
+```
+$lat
+[1] 43.2829
+
+$lng
+[1] 6.2507
+
+$.nonce
+[1] 0.8278805
+
+```
+
+## Point
+On crée un point depuis les coordonnées comme ceci :
+```{r}
+pt <- c(6.2507, 43.2829) %>% st_point %>% st_sfc %>% st_set_crs(4326)
+```
+
+## Commune localisée au clic
+On intersecte les communes avec le point :
+```{r}
+i <- st_intersects(comms, pt)
+```
+
+On détermine la commune au point :
+```{r}
+w <- which(sapply(i, function(x) length(x) != 0))
+codeInsee <- comms$INSEE_COM[w]
+```
+
+## Fonction `getCommCenter`
+On peut en faire une fonction `getCommCenter` :
+```{r}
+getCommCenter <- function(comms, coords) {
+    pt <- coords %>% st_point %>% st_sfc %>% st_set_crs(4326)
+    i <- st_intersects(comms, pt)
+    w <- which(sapply(i, function(x) length(x) != 0))
+    codeInsee <- comms$INSEE_COM[w]
+    return(codeInsee)
+}
+```
+
+Utilisons par exemple la fonction pour trouver la commune qui est au point de coordonnées `5.398602, 43.53609` :
+```{r}
+comms %>% getCommCenter(c(5.398602, 43.53609))
+```

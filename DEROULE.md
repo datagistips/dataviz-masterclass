@@ -1,9 +1,8 @@
-## Préambule
-- exploration de la donnée
-- préparation de la donnée avec getStatsFlux
-- ggplot (lecture)
-- streamgraph (lecture)
-- treemap (lecture)
+## Déroulé
+- trafic routier et cartofriches
+- notebooks
+- shiny
+- questions
 
 ## Shiny
 Faire un notebook des modifs

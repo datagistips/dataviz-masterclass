@@ -14,11 +14,13 @@ Ils permettent de prendre en main les données, de comprendre les fonctions util
 ## Application Shiny
 ![](https://raw.githubusercontent.com/datagistips/shiny-artif-app/master/thumbnail.png)
 
-[Application Shiny](https://github.com/datagistips/shiny-artif-app/)
+[Code de l'application Shiny](https://github.com/datagistips/shiny-artif-app/)
 
-### 📢 Tuto
+## 📢 Tuto
 [Un notebook déroule les différentes étapes de conception de l'application Shiny](notebook/8-notebook-shiny.Rmd)
 
 ## Données
-[Téléchargement](https://cerema.app.box.com/v/pnb-action7-indicateurs-ff)  | [Documentation](https://artificialisation.biodiversitetousvivants.fr/sites/artificialisation/files/fichiers/2020/03/description%20indicateurs.pdf)  
+[Téléchargement des données](https://cerema.app.box.com/v/pnb-action7-indicateurs-ff)  
+[Documentation associée aux données](https://artificialisation.biodiversitetousvivants.fr/sites/artificialisation/files/fichiers/2020/03/description%20indicateurs.pdf)  
+
 [Portail artificialisation biodiversité tous vivants](https://artificialisation.biodiversitetousvivants.fr/)

@@ -15,11 +15,9 @@ Chaque version fait [l'objet d'un commit spécifique](https://github.com/datagis
 ## Notebooks
 [Ces notebooks](NOTEBOOK.md) permettent de prendre en main les données, de comprendre les fonctions utilisées dans l'application Shiny.
 
-Ils sont importants à parcourir avant de s'atteler au notebook plus spécifique dédié au développement de l'appli Shiny.
+Ils sont importants à parcourir avant de s'atteler au [notebook plus spécifique dédié au développement de l'appli Shiny](notebook/8-notebook-shiny.Rmd).
 
-👉 [Accéder au notebook sur la création d'une application Shiny](notebook/8-notebook-shiny.Rmd) 😃
-
-[Accéder directement au code de l'application Shiny dans le repo shiny-artif-app](https://github.com/datagistips/shiny-artif-app/)
+👉 [Accéder directement au code de l'application Shiny dans le repo shiny-artif-app](https://github.com/datagistips/shiny-artif-app/)
 
 ## Données
 [Données](DATA.md)

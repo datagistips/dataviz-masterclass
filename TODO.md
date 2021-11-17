@@ -1,7 +1,12 @@
+## 17 Novembre
+- [ ] GIF d'utilisation
+- intro grammar of graphics, bertin
+- cholera map, covid, tufte, minard map
+
 ## 16 Novembre
-- [ ] Copies d'écran
-- [ ] Mieux expliquer input$map...
-- [ ] GIF
+- [x] Copies d'écran
+- [x] Mieux expliquer input$map...
+- [x] GIF évolution
 
 ## 5 Novembre
 - [x] Notebook shiny
@@ -12,7 +17,7 @@
 - [x] TOC
 - [x] Images de slides
 - [ ] Exemples d'applications
-- [ ] Séparer en ui.R, server.R, global.R et helpers.R
+- [ ] >> Séparer en ui.R, server.R, global.R et helpers.R
 
 ## 3 Novembre
 - [x] paged pour les tableaux
@@ -29,5 +34,5 @@
 - [x] utiliser couleurs HCL
 - [x] tuto ggplot
 - [x] selon bbox et communes
-- [ ] sketches UI
+- [ ] >> sketches UI
 - [x] ordre habitat, activité, etc...

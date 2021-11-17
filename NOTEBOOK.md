@@ -18,5 +18,5 @@ Notebooks présidant à la création de l'application Shiny au format R Markdown
 7. [Treemap](html7-notebook-treemap.Rmd) | [html](  
 html7-notebook-treemap.html)
 
-### Shiny
+
 8. [Création d'une appli Shiny](8-notebook-shiny.Rmd) | [html](8-notebook-shiny.html)

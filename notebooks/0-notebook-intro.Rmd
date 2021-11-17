@@ -1,0 +1,72 @@
+---
+title: 'Intro'
+output:
+  html_document:
+    df_print: paged
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+
+## Quelques exemples de datavisualisation
+### John Snow Cholera
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/800px-Snow-cholera-map-1.jpg)
+
+[Voir](https://fr.wikipedia.org/wiki/%C3%89pid%C3%A9mie_de_chol%C3%A9ra_de_Broad_Street)
+
+### Minard
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Minard.png/1200px-Minard.png)
+
+[Voir](https://fr.wikipedia.org/wiki/Charles_Joseph_Minard)
+
+### Dear Data
+![](https://images.squarespace-cdn.com/content/v1/54eec73ee4b0ae0904da0e94/1469459145010-6JB78NK8W94205NYCMBH/image-asset.jpeg?format=2500w)
+
+[Voir](http://www.dear-data.com/theproject)
+
+### Brian Foo
+![](https://brianfoo.com/assets/works/two_trains.png)
+
+[Voir](https://datadrivendj.com/tracks/subway)
+
+## Quelques théories et théoriciens
+### Bertin
+![](files/bertin.png)
+
+### Edward Tufte
+![](files/tufte.jpg)
+
+### Leland Wilkinson
+![](files/gg.jpg)
+
+## Des librairies pour visualiser
+### Python
+- dash
+- plotly
+- matplotlib
+- seaborn
+- bokeh
+- ...
+
+### R
+- Shiny
+- ggplot
+- Rgl
+- ...
+
+### Javascript
+- leaflet
+- D3 & ObservableHQ
+- svelte
+- kepler
+- Charts.js
+- ...
+
+## Des exemples Cerema faits sous Shiny
+### trafic covid
+![](files/trafic-covid.png)
+[https://dataviz.cerema.fr/trafic-routier](https://dataviz.cerema.fr/trafic-routier)
+
+### Cartofriches
+![](files/cartofriches.png)
+[https://cartofriches.cerema.fr/](https://cartofriches.cerema.fr/)

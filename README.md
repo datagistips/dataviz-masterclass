@@ -12,8 +12,6 @@ Répertoire pédagogique de la masterclass Dataviz/Géodataviz réalisée à l'o
 👉 [Un notebook déroule, pas à pas, la création d'une application Shiny](notebook/8-notebook-shiny.Rmd) 😃
 
 ## Application Shiny
-![](https://raw.githubusercontent.com/datagistips/shiny-artif-app/master/thumbnail.png)
-
 [Code de l'application Shiny](https://github.com/datagistips/shiny-artif-app/)
 
 ## Données

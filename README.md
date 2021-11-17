@@ -20,5 +20,5 @@ Ils sont importants à parcourir avant de s'atteler au [notebook plus spécifiqu
 👉 [Accéder directement au code de l'application Shiny dans le repo shiny-artif-app](https://github.com/datagistips/shiny-artif-app/)
 
 ## Données
-[Données](DATA.md)
+[Données artificialisation du Cerema](DATA.md)
 

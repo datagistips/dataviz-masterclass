@@ -1,3 +1,8 @@
+## 16 Novembre
+- [ ] Copies d'écran
+- [ ] Mieux expliquer input$map...
+- [ ] GIF
+
 ## 5 Novembre
 - [x] Notebook shiny
 - [ ] Déployer sur shinyapps datagistips

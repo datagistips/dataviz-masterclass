@@ -1,0 +1,2 @@
+gifsicle -b a.gif -d50 "#0" "#1" -d100 "#2" "#3"
+https://www.lcdf.org/gifsicle/man.html

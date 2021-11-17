@@ -4,7 +4,7 @@ output:
   html_document:
     df_print: paged
     toc: true
-    toc_depth: 2
+    toc_depth: 3
     toc_float: true
 ---
 Dans ce notebook, nous allons préparer les données
@@ -25,20 +25,34 @@ myCols
 ```
 
 ## Transformation du format wide vers long
-Nous utiliserons ggplot2 pour représenter les données. Celui-ci accepte des données au format long et non wide.
+Nous utiliserons **ggplot2** pour représenter les données. Celui-ci accepte des données au format long et non wide.
 
-Prenons l'exemple d'Aix en Provence :
+Voici la différence entre un fichier de type wide et un fichier de type long :
+
+### Wide
+
+| id | nom | sport | ville | 
+| -- | -- | -- | -- |
+| 1 | mathieu | squash | Aix-en-Provence |
+
+### Long
+
+| id | variable | valeur |
+| -- | -- | -- |
+| 1 | nom | mathieu |
+| 1 | sport | squash |
+| 1 | ville | Aix-en-Provence |
+
+### Transformation au format long avec `gather`
+Prenons l'exemple d'Aix en Provence. Les données sont dans un format wide (le plus commun, avec les variables en colonnes) :
 ```{r}
-library(knitr)
-
 df <- flux %>% filter(idcom == "13001")
-df[, myCols]
+df[, c("idcom", "idcomtxt", myCols)]
 
 ```
 
 Pour transformer au format long, nous utilisons la fonction `gather` :
 ```{r}
-library(knitr)
 df <- df[, c("idcom", "idcomtxt", myCols)]
 df <- gather(df,
              "variable", # key
@@ -73,6 +87,11 @@ df <- df %>% mutate(type = case_when(
 Au final, nous n'avons plus besoin de la variable variable :
 ```{r}
 df$variable <- NULL
+```
+
+Voici notre fichier df au final :
+```{r}
+df
 ```
 
 ## Fonction `getStatsFlux`
@@ -119,5 +138,5 @@ Pas mal d'étapes de préparation sont parfois nécessaires avant de créer des 
 
 ![](files/data-eng1.png)
 
-Voici la chaîne pour Cartofriches :
+Voici la chaîne de données, assez conséquente, pour Cartofriches :
 ![](files/data-eng2.png)

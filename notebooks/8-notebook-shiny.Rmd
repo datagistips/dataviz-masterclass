@@ -12,7 +12,10 @@ Cette animation montre l'évolution de l'application depuis le premier commit ju
 
 Nous partons d'une représentation assez basique (poser les bases) vers l'ajout progressif d'éléments d'interaction utilisateur, de représentation de la données, ainsi que d'éléments contextuels textes.
 
+Cette animation montre l'évolution de l'appli depuis le premier commit jusqu'au dernier :
 ![](files/shinyapp/gif/animation-compressed.gif)
+
+Le code de l'application est accessible dans le répertoire github [shiny-artif-app](https://github.com/datagistips/shiny-artif-app/blob/master/README.md).
 
 ## Préambule
 Pour créer une application Shiny, il faut, depuis [RStudio](https://www.rstudio.com/products/rstudio/download/), aller dans `File > New File > Shiny Web App...`
@@ -440,6 +443,20 @@ output$treemap <- renderPlotly({
 })
 ```
 ► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/1edc95aebfe35df74ca77370b78dc1d0402157a6)
+
+## Sépare en `ui.R`, `server.R` et `global.R`
+Lorsque le code d'une application devient conséquent, cela peut être utile, plutôt que d'utiliser un unique fichier `app.R`, de séparer le contenu dans trois fichiers : `ui.R`, `server.R` et `global.R`
+
+- `ui.R` comprend les éléments d'interface auparavant contenus dans `ui <- fluidPage({...})`
+- `server.R` comprend la logique applicative et fonctionnelle de l'application : mécanismes d'interrogation et de représentation des données, auparavant contenue dans `server <- function(input, output) {...}`
+- `global.R` comprend les variables utilisées dans l'application.
+
+### Au sujet de `global.R`
+Les variables contenues dans `global.R` deviennent automatiquement globales.
+
+Il n'y a alors plus besoin d'utiliser la double flèche d'assignation des variables globales dans `global.R` (précédemment `monNom <<- "Mathieu"`). On a donc `monNom <- "Mathieu"` dans `global.R`
+
+► [Voir cette version](81991cf6ba1a4abef9df951bcdcc1858d97b6815)
 
 ## Dimensions d'une dataviz
 Voici selon moi les dimensions d'une dataviz :

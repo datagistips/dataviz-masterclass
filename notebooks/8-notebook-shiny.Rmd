@@ -15,7 +15,7 @@ Nous partons d'une représentation assez basique (poser les bases) vers l'ajout 
 ![](files/shinyapp/gif/animation-compressed.gif)
 
 ## Préambule
-Pour créer une application Shiny, il faut, depuis RStudio, aller dans `File > New File > Shiny Web App...`
+Pour créer une application Shiny, il faut, depuis [RStudio](https://www.rstudio.com/products/rstudio/download/), aller dans `File > New File > Shiny Web App...`
 
 ![](files/create-shiny.png)
 Cela crée une application basique qui sert d'exemple, avec une liste déroulante et un graphique d'exemple :

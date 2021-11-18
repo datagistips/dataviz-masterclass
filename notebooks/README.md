@@ -1,7 +1,7 @@
 # Notebooks
 Notebooks présidant à la création d'une application Shiny sur l'artificialisation :
 
-<img src="https://raw.githubusercontent.com/datagistips/dataviz-masterclass/master/notebooks/files/shinyapp/gif/animation-compressed.gif" width='60%'>
+<img src="https://raw.githubusercontent.com/datagistips/dataviz-masterclass/master/notebooks/files/shinyapp/gif/animation.gif" width='60%'>
 
 0. [Introduction (R Markdown)](0-notebook-intro.Rmd) | 
  [html](0-notebook-intro.html)  

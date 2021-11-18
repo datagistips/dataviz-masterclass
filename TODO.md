@@ -10,7 +10,7 @@
 
 ## 5 Novembre
 - [x] Notebook shiny
-- [ ] >> Déployer sur shinyapps datagistips
+- [x] Déployer sur shinyapps datagistips
 - [x] subtree > submodule
 - [x] Améliorer les notebooks
 - [x] Mettre les warnings false, etc.. dans les Rmd

@@ -8,7 +8,7 @@ La présentation, effectuée le 19 Novembre 2021, visait à montrer comment dév
 
 Voici les différentes versions par lesquelles passait la démonstration :
 
-![](notebooks/files/shinyapp/gif/animation-compressed.gif)
+<img src=https://raw.githubusercontent.com/datagistips/dataviz-masterclass/master/notebooks/files/shinyapp/gif/animation-compressed.gif width='75%'>
 
 Chaque version fait [l'objet d'un commit spécifique](https://github.com/datagistips/shiny-artif-app/commits/master), permettant ainsi de voir les différences et le passage d'une version à l'autre.
 

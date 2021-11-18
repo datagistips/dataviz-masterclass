@@ -9,7 +9,7 @@ Notebooks présidant à la création d'une application Shiny sur l'artificialisa
 1. [Lecture des données de flux](1-notebook-read.Rmd) | 
  [html](1-notebook-read.html)  
  
-2. [Récupération des stats de flux](2-notebook-process.Rmd) | [html](2-notebook-process.Rmd)
+2. [Récupération des stats de flux](2-notebook-process.Rmd) | [html](2-notebook-process.html)
 
 3. [Premier plot avec ggplot](3-notebook-ggplot.Rmd)
  | [html](3-notebook-ggplot.html)
@@ -18,7 +18,7 @@ Notebooks présidant à la création d'une application Shiny sur l'artificialisa
 
 5. [Requête Spatiale](5-notebook-spatial.Rmd) | [html](5-notebook-spatial.html)
 
-6. [Camemberts vs graphiques en barres](6-notebook-pieplot-vs-barplot.Rmd) | [html](6-notebook-pieplot-vs-barplot.Rmd)
+6. [Camemberts vs graphiques en barres](6-notebook-pieplot-vs-barplot.Rmd) | [html](6-notebook-pieplot-vs-barplot.html)
 
 7. [Treemap](7-notebook-treemap.Rmd) | [html](  
 7-notebook-treemap.html)

@@ -362,11 +362,18 @@ df &lt;- gather(df,
 ## [41] &quot;art19act20&quot; &quot;art19hab20&quot; &quot;art19mix20&quot; &quot;art19inc20&quot;</code></pre>
 </div>
 </div>
-<div id="année-et-de-la-destination-du-flux" class="section level2">
-<h2>Année et de la destination du flux</h2>
+<div id="année-et-destination-du-flux" class="section level2">
+<h2>Année et destination du flux</h2>
 <p>Nous allons extraire l’année et le type (habitat, activité, mixte, inconnu) depuis le champ <code>variable</code> :</p>
 <pre class="r"><code>df$year &lt;- gsub(&quot;art([0-9]{2})(\\S+)[0-9]{2}&quot;, &quot;20\\1&quot;, df$variable)
 df$type &lt;- gsub(&quot;art([0-9]{2})(\\S+)[0-9]{2}&quot;, &quot;\\2&quot;, df$variable)</code></pre>
+<p>Voici le résultat:</p>
+<pre class="r"><code>df %&gt;% head</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["idcom"],"name":[1],"type":["chr"],"align":["left"]},{"label":["idcomtxt"],"name":[2],"type":["chr"],"align":["left"]},{"label":["variable"],"name":[3],"type":["chr"],"align":["left"]},{"label":["value"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["year"],"name":[5],"type":["chr"],"align":["left"]},{"label":["type"],"name":[6],"type":["chr"],"align":["left"]}],"data":[{"1":"13001","2":"Aix-en-Provence","3":"art09act10","4":"70439","5":"2009","6":"act"},{"1":"13001","2":"Aix-en-Provence","3":"art09hab10","4":"223015","5":"2009","6":"hab"},{"1":"13001","2":"Aix-en-Provence","3":"art09mix10","4":"21156","5":"2009","6":"mix"},{"1":"13001","2":"Aix-en-Provence","3":"art09inc10","4":"2502","5":"2009","6":"inc"},{"1":"13001","2":"Aix-en-Provence","3":"art10act11","4":"70440","5":"2010","6":"act"},{"1":"13001","2":"Aix-en-Provence","3":"art10hab11","4":"223016","5":"2010","6":"hab"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 <div id="retraitement" class="section level2">
 <h2>Retraitement</h2>

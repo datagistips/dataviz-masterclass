@@ -66,11 +66,16 @@ La colonne `variable` comporte des valeurs telles que `art09hab10` pour le flux 
 unique(df$variable)
 ```
 
-## Année et de la destination du flux
+## Année et destination du flux
 Nous allons extraire l'année et le type (habitat, activité, mixte, inconnu) depuis le champ ` variable` :
 ```{r}
 df$year <- gsub("art([0-9]{2})(\\S+)[0-9]{2}", "20\\1", df$variable)
 df$type <- gsub("art([0-9]{2})(\\S+)[0-9]{2}", "\\2", df$variable)
+```
+
+Voici le résultat:
+```{r}
+df %>% head
 ```
 
 ## Retraitement

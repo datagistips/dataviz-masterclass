@@ -42,6 +42,7 @@ p <- ggplot(data = df,
 
 p
 ```
+
 C'est vraiment le graphique le plus basique que nous puissions réaliser.
 
 ## Quelques améliorations
@@ -76,6 +77,7 @@ p <- ggplot(data = df,
   scale_y_continuous(name = "Ha", expand = c(0, 0))
 p
 ```
+
 Nous avons allégé au maximum le graphique. Nous avons mis la légende en bas pour qu'elle n'écrase pas le graphique
 
 Mais les couleurs ne sont pas forcément encore tops !..

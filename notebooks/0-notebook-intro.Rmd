@@ -10,7 +10,7 @@ output:
 
 ## Quelques exemples de datavisualisation
 ### John Snow Cholera
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/800px-Snow-cholera-map-1.jpg)
+![](https://media.nationalgeographic.org/assets/photos/000/276/27636.jpg)
 
 [Voir](https://fr.wikipedia.org/wiki/%C3%89pid%C3%A9mie_de_chol%C3%A9ra_de_Broad_Street)
 
@@ -33,13 +33,19 @@ output:
 ### Bertin
 ![](files/bertin.png)
 
-### Edward Tufte
-![](files/tufte.jpg)
-
 ### Leland Wilkinson
 ![](files/gg.jpg)
 
-## Des librairies pour visualiser
+### Edward Tufte
+![](files/tufte.jpg)
+
+## Des outils pour visualiser
+### Outils bureau
+- Tableau 
+- ESRI Dashboards
+- MViewer
+- ...
+
 ### Python
 - dash
 - plotly
@@ -62,7 +68,7 @@ output:
 - Charts.js
 - ...
 
-## Des exemples Cerema faits sous Shiny
+## Des dataviz Cerema faites sous Shiny
 ### trafic covid
 ![](files/trafic-covid.png)
 [https://dataviz.cerema.fr/trafic-routier](https://dataviz.cerema.fr/trafic-routier)

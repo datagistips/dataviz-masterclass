@@ -477,7 +477,8 @@ Le développement de cette dataviz a suivi ces différentes étapes :
 Bien sûr, on ne peut pas représenter des choses qui n'existent pas, d'où l'importance de la collecte, et de la stabilité du point d'accès à la donnée, notamment lorsque votre dataviz doit être mise à jour régulièrement.
 
 ### Qualité
-Une dataviz faite sur des données de mauvaise qualité produira des graphiques de mauvaise qualité.
+![](files/qualité.png)
+Une dataviz faite sur des données posant des soucis de qualité produira des graphiques de mauvaise qualité.
 
 ### Sémiologie
 Une certaine sémiologie graphique et rigueur doit être suivie afin de restituer de manière convenable l'information à l'utilisateur.

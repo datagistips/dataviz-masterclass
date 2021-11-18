@@ -23,3 +23,6 @@ html7-notebook-treemap.html)
 
 
 8. [Création d'une appli Shiny](8-notebook-shiny.Rmd) | [html](8-notebook-shiny.html)
+
+8. [Réflexions sur la dataviz](9-notebook-réflexions.Rmd) | [html](9-notebook-réflexions.html)
+

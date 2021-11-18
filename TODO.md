@@ -1,7 +1,7 @@
 ## 17 Novembre
 - [ ] GIF d'utilisation
-- intro grammar of graphics, bertin
-- cholera map, covid, tufte, minard map
+- [x] intro grammar of graphics, bertin
+- [x] cholera map, covid, tufte, minard map
 
 ## 16 Novembre
 - [x] Copies d'écran
@@ -10,14 +10,14 @@
 
 ## 5 Novembre
 - [x] Notebook shiny
-- [ ] Déployer sur shinyapps datagistips
+- [ ] >> Déployer sur shinyapps datagistips
 - [x] subtree > submodule
 - [x] Améliorer les notebooks
 - [x] Mettre les warnings false, etc.. dans les Rmd
 - [x] TOC
 - [x] Images de slides
-- [ ] Exemples d'applications
-- [ ] >> Séparer en ui.R, server.R, global.R et helpers.R
+- [x] Exemples d'applications
+- [x] Séparer en ui.R, server.R, global.R et helpers.R
 
 ## 3 Novembre
 - [x] paged pour les tableaux

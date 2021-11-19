@@ -64,7 +64,7 @@ Dans un premier temps, on pose les bases, et on efface certains éléments de l'
 
 ► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/414c6942ce44edd411e256ab0295bb50de2fa059) (414c6942ce44edd411e256ab0295bb50de2fa059)
 
-#### server.R
+#### `server.R`
 La partie est laissée vide pour le moment :
 ```{r eval = FALSE}
 server <- function(input, output) {
@@ -91,7 +91,7 @@ comms <<- readRDS("data/comms.rds") %>%
 communes <- flux$idcom
 names(communes) <- glue("{flux$idcomtxt} ({flux$idcom})")
 ```
-#### ui.R
+#### `ui.R`
 On ajoute la liste déroulante des communes maintenant qu'elles ont été lues :
 ```{r eval = FALSE}
     sidebarLayout(
@@ -112,14 +112,14 @@ On ajoute la liste déroulante des communes maintenant qu'elles ont été lues :
 
 On peut afficher un tableau des résultats de flux pour une commune sélectionnée, juste pour tester les mécanismes de sélection, notamment la fonction `getStatsFlux` vue dans un précédent notebook.
 
-#### ui.R
+#### `ui.R`
 ```{r eval = FALSE}
 mainPanel(
           dataTableOutput("tbResults")
         )
 ```
 
-#### server.R
+#### `server.R`
 On ajoute les résultats avec `renderDataTable` et `dataTableOutput` :
 ```{r eval = FALSE}
     output$tbResults <- renderDataTable({
@@ -136,14 +136,14 @@ On ajoute les résultats avec `renderDataTable` et `dataTableOutput` :
 
 On ajoute le streamgraph.
 
-#### ui.R
+#### `ui.R`
 ```{r eval = FALSE}
 mainPanel(
             streamgraphOutput("streamPlot")
         )
 ```
 
-#### server.R
+#### `server.R`
 ```{r eval = FALSE}
     output$streamPlot <- renderStreamgraph({
         myStream <- flux %>% makeStream(codeInsee)
@@ -158,7 +158,7 @@ mainPanel(
 
 On peut ajouter des informations assez sommaires sur la commune sélectionnée, sous la forme de texte.
 
-#### ui.R
+#### `ui.R`
 ```{r eval = FALSE}
 mainPanel(
     textOutput("txtCommune"),
@@ -166,7 +166,7 @@ mainPanel(
 )
 ```
 
-#### server.R
+#### `server.R`
 ```{r eval = FALSE}
 output$txtCommune <- renderText({
     codeInsee <- input$communes
@@ -180,7 +180,7 @@ output$txtCommune <- renderText({
 ### Ajoute la légende
 ![](files/snapshots/legende.png)
 
-#### server.R
+#### `server.R`
 Pour la légende, on utilise simplement de l'HTML stylisé, plutôt que la légende du plot.
 
 ```{r eval = FALSE}
@@ -224,7 +224,7 @@ On ajoute une nouvelle information en texte.
 ###  Ajout de reactive `fComm`
 Les variables de type `reactive` sont très utiles lorsqu'il s'agit de récupérer à plusieurs endroits le résultat d'une variable calculée car cela évite, entre autres, de devoir répliquer les mécanismes de création de cette variable à ces multiples endroits. Aussi, un mécanisme interne permet de ne pas recalculer la variable si elle n'a pas changé avec les nouveaux critères de création.
 
-#### server.R
+#### `server.R`
 ```{r eval = FALSE}
 fComm <- reactive({
     fComm <- flux %>% filter(idcom == input$communes)
@@ -244,12 +244,12 @@ fComm()$nafart0920
 ###  Ajoute la carte leaflet
 ![](files/snapshots/carte.png)
 
-#### ui.R
+#### `ui.R`
 ```{r eval = FALSE}
 leafletOutput("mymap")
 ```
 
-#### server.R
+#### `server.R`
 ```{r eval = FALSE}
 output$mymap <- renderLeaflet({
         leaflet() %>%
@@ -261,7 +261,7 @@ output$mymap <- renderLeaflet({
 ###  Centre la carte sur PACA
 ![](files/snapshots/paca.png)
 
-#### server.R
+#### `server.R`
 Pour ajuster la carte sur PACA, on utile la fonction `fitBounds`.
 
 ```{r eval = FALSE}
@@ -284,7 +284,7 @@ output$mymap <- renderLeaflet({
 
 Ajoutons davantage de fonds cartos, notamment ceux de l'IGN : orthophoto, Plan IGN.
 
-#### server.R
+#### `server.R`
 ```{r eval = FALSE}
 output$mymap <- renderLeaflet({
 
@@ -318,12 +318,12 @@ Pour trouver les coordonnées au clic, on utile un mécanisme de sélection bas�
 
 > A noter que l'on peut aussi réagir au clic sur une entité (`input$mymap_shape_click`), voire au passage (`input$mymap_shape_mouseover`). [Voir à ce titre la page dédiée sur R Leaflet](https://rstudio.github.io/leaflet/shiny.html#inputsevents).
 
-#### ui.R
+#### `ui.R`
 ```{r eval = FALSE}
 verbatimTextOutput("foo")
 ```
 
-#### server.R
+#### `server.R`
 ```{r eval = FALSE}
 output$foo <- renderPrint({
     input$mymap_click
@@ -342,7 +342,7 @@ On rend le code INSEE reactive car il sera utilisé à plusieurs endroits : [ici
 ### Ajoute le reactive
 On peut créer des reactive en cascade, comme ici, pour `fComm()` qui s'appuie sur `codeInsee()`
 
-#### server.R
+#### `server.R`
 ```{r eval = FALSE}
 fComm <- reactive({
         fComm <- flux %>% filter(idcom == input$communes)
@@ -479,12 +479,12 @@ if(is.null(codeInsee())) return(tagList(icon("mouse-pointer"), "Cliquez sur la c
 
 Tiens, comme on y est, pourquoi pas ajouter une treemap.
 
-#### ui.R
+#### `ui.R`
 ```{r eval = FALSE}
 plotlyOutput("treemap")
 ```
 
-#### server.R
+#### `server.R`
 ```{r eval = FALSE}
 output$treemap <- renderPlotly({
     req(codeInsee())
@@ -504,6 +504,32 @@ Lorsque le code d'une application devient conséquent, cela peut être utile, pl
 ### Au sujet de `global.R`
 Les variables contenues dans `global.R` deviennent automatiquement globales.
 
-Il n'y a alors plus besoin d'utiliser la double flèche d'assignation des variables globales dans `global.R` (précédemment `monNom <<- "Mathieu"`). On a donc `monNom <- "Mathieu"` dans `global.R`
+Il n'y a alors plus besoin d'utiliser la double flèche d'assignation des variables globales dans `global.R`
+
+#### `server.R`
+Précédemment, on avait ceci dans `server.R` :
+```r
+`monNom <<- "Mathieu"
+```
+
+#### `global.R`
+Dans `global.R`, la variable devient automatiquement globale même avec une assignation simple :
+```r
+`monNom <- "Mathieu"`
+```
 
 ► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/81991cf6ba1a4abef9df951bcdcc1858d97b6815) (81991cf6ba1a4abef9df951bcdcc1858d97b6815)
+
+### Ajoute un fichier `helpers.R`
+On peut créer un fichier annexe appelé `helpers.R` (nous aurions également pu l'appeler functions.R) dans lequel stocker les différentes stockées utilisées auparavant dans `server.R`
+
+Cela a le mérite de rendre le code du fichier `server.R` plus _léger_, plus _lisible_ car mettant en évidence les mécanismes de façon macro plutôt que micro avec le détail de leur fonctionnement interne.
+
+Nous faisons appel au fichier `helpers.R` au sein de `global.R`
+
+#### `global.R`
+```r
+source("helpers.R", encoding = "UTF-8")
+```
+
+[Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/b6a508c9db407cdc98969b50b80867554978796c) (b6a508c9db407cdc98969b50b80867554978796c)

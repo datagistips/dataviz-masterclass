@@ -9,28 +9,35 @@ output:
 ---
 
 ## Quelques exemples de datavisualisation
-### John Snow Cholera
+### La carte du choléra de John Snow
 ![](https://media.nationalgeographic.org/assets/photos/000/276/27636.jpg)
 
 [Voir](https://fr.wikipedia.org/wiki/%C3%89pid%C3%A9mie_de_chol%C3%A9ra_de_Broad_Street)
 
-### Minard
+### Charles Joseph Minard
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Minard.png/1200px-Minard.png)
 
 [Voir](https://fr.wikipedia.org/wiki/Charles_Joseph_Minard)
 
-### Dear Data
+### La correspondance de Stefanie Posavec et Giorgia Lupi
 ![](https://images.squarespace-cdn.com/content/v1/54eec73ee4b0ae0904da0e94/1469459145010-6JB78NK8W94205NYCMBH/image-asset.jpeg?format=2500w)
 
-[Voir](http://www.dear-data.com/theproject)
+<!-- addiction téléphone, mauvaise humeur, sorry --> 
 
-### Brian Foo
+[Dar data](http://www.dear-data.com/theproject)
+
+### Le suivi de l'épidémie en ligne de Guillaume Rozier
+![](files/covid-tracker.jpg)
+
+[Covid-tracker](https://covidtracker.fr/)
+
+### Le Data-Driven DJ de Brian Foo
 ![](https://brianfoo.com/assets/works/two_trains.png)
 
 [Voir](https://datadrivendj.com/tracks/subway)
 
 ## Quelques théories et théoriciens
-### Bertin
+### Jacques Bertin
 ![](files/bertin.png)
 
 ### Leland Wilkinson

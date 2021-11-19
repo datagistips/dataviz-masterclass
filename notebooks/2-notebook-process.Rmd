@@ -7,7 +7,7 @@ output:
     toc_depth: 3
     toc_float: true
 ---
-Dans ce notebook, nous allons préparer les données
+Dans ce notebook, nous allons préparer la donnée, afin d'obtenir la donnée transformée escomptée, à savoir un flux d'artificialisation par commune et par année.
 
 ## Lecture des données
 Lisons les données de flux

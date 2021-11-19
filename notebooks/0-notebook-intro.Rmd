@@ -10,12 +10,12 @@ output:
 
 ## Quelques exemples de datavisualisation
 ### La carte du choléra de John Snow
-![](https://media.nationalgeographic.org/assets/photos/000/276/27636.jpg)
+![](files/snow.jpg)
 
 [Voir](https://fr.wikipedia.org/wiki/%C3%89pid%C3%A9mie_de_chol%C3%A9ra_de_Broad_Street)
 
 ### Charles Joseph Minard
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Minard.png/1200px-Minard.png)
+![](files/minard.png)
 
 [Voir](https://fr.wikipedia.org/wiki/Charles_Joseph_Minard)
 

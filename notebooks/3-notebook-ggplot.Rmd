@@ -60,21 +60,21 @@ p <- ggplot(data = df,
            fill = type)) +
   geom_bar(stat = "identity") +
   theme(
-        axis.title.x = element_blank(),
-        axis.ticks.x = element_blank(),
-        axis.text.x = element_text(vjust = 3),
-        axis.ticks.y = element_blank(),
-        axis.title.y = element_blank(),
-        panel.border = element_blank(),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        legend.position = "bottom",
-        legend.title = element_blank(),
-        plot.title = element_text(face = "bold", size = 10, colour = "grey60"),
-        legend.text = element_text(size = 8)
+        axis.title.x = element_blank(), # pas de titre pour l'axe X
+        axis.ticks.x = element_blank(), # pas de tirets pour l'axe X
+        axis.text.x = element_text(vjust = 3), # repositionnement des années un peu plus en haut (vu qu'on enlève les tirets)
+        axis.ticks.y = element_blank(), # pas de tirets sur l'axe Y
+        axis.title.y = element_blank(), # pas de titre pour l'axe Y
+        panel.border = element_blank(), # pas de bordure
+        panel.grid.major.x = element_blank(), # pas de lignes verticales
+        panel.grid.minor.x = element_blank(), # pas de "sous"-lignes verticales
+        legend.position = "bottom", # légende en vas
+        legend.title = element_blank(), # pas de titre pour la légende
+        plot.title = element_text(face = "bold", size = 10, colour = "grey60"), # titre en gras et en gris
+        legend.text = element_text(size = 8) # taille de texte pour la légende (plus petit)
         ) +
   ggtitle("Flux d'artificialisation par année en Ha") + 
-  scale_y_continuous(name = "Ha", expand = c(0, 0))
+  scale_y_continuous(expand = c(0, 0)) # réinitialise la marge en x et y vers les coordonnées 0,0 (au plus proche)
 p
 ```
 
@@ -127,7 +127,7 @@ myPalette <- c("blue" = colorBlue,
 
 ### Assistants
 A savoir que la librairie colorspace intègre un assistant pour choisir les couleurs dans un espace HCL :
-```{r include=FALSE}
+```{r include=FALSE, eval = FALSE}
 hclcolorpicker
 ```
 

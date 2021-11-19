@@ -3,7 +3,7 @@ Notebooks présidant à la création d'une application Shiny sur l'artificialisa
 
 <img src="https://raw.githubusercontent.com/datagistips/dataviz-masterclass/master/notebooks/files/shinyapp/gif/animation.gif" width='60%'>
 
-0. [Introduction (R Markdown)](0-notebook-intro.Rmd) | 
+0. [Introduction](0-notebook-intro.Rmd) | 
  [html](0-notebook-intro.html)  
 
 1. [Lecture des données de flux](1-notebook-read.Rmd) | 

@@ -56,13 +56,13 @@ shinyApp(ui = ui, server = server)
 
 > En quelque sorte, par analogie avec un modèle MVC (Modèle Vue Contrôleur), ui concerne la Vue et server le Contrôleur.
 
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/006bc70d801a290ef1771b69cd2ded14e0b12516)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/006bc70d801a290ef1771b69cd2ded14e0b12516) (006bc70d801a290ef1771b69cd2ded14e0b12516)
 
 ### Pose les bases 
 
 Dans un premier temps, on pose les bases, et on efface certains éléments de l'application d'exemple.
 
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/414c6942ce44edd411e256ab0295bb50de2fa059)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/414c6942ce44edd411e256ab0295bb50de2fa059) (414c6942ce44edd411e256ab0295bb50de2fa059)
 
 #### server.R
 La partie est laissée vide pour le moment :
@@ -73,6 +73,8 @@ server <- function(input, output) {
 ```
 
 ### Lecture des données et liste déroulante des communes
+![](files/snapshots/liste.png)
+
 On lit les données de flux :
 ```{r eval = FALSE}
 flux <- read_csv("data/obs_artif_conso_com_2009_2020_V2.csv", na = c("", "NULL")) %>% 
@@ -103,9 +105,11 @@ On ajoute la liste déroulante des communes maintenant qu'elles ont été lues :
     )
 
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/9c271b706e34afff002b6e6d5df7ef895af1907e)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/9c271b706e34afff002b6e6d5df7ef895af1907e) (9c271b706e34afff002b6e6d5df7ef895af1907e)
 
 ###  Affiche un tableau des résultats
+![](files/snapshots/tableau.png)
+
 On peut afficher un tableau des résultats de flux pour une commune sélectionnée, juste pour tester les mécanismes de sélection, notamment la fonction `getStatsFlux` vue dans un précédent notebook.
 
 #### ui.R
@@ -124,10 +128,12 @@ On ajoute les résultats avec `renderDataTable` et `dataTableOutput` :
         return(df)
     })
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/64c7a25268157cf832c9b57dc71b7dfffd663d9e)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/64c7a25268157cf832c9b57dc71b7dfffd663d9e) (64c7a25268157cf832c9b57dc71b7dfffd663d9e)
 
 ## Dataviz (#1)
 ### Ajoute le stream
+![](files/snapshots/stream.png)
+
 On ajoute le streamgraph.
 
 #### ui.R
@@ -144,10 +150,12 @@ mainPanel(
         return(myStream)
     })
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/a402e8385afcf0c350ac0841037a69383e85eace)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/a402e8385afcf0c350ac0841037a69383e85eace) (a402e8385afcf0c350ac0841037a69383e85eace)
 
 ## Contexte (#1)
 ### Ajoute les infos communales
+![](files/snapshots/texte.png)
+
 On peut ajouter des informations assez sommaires sur la commune sélectionnée, sous la forme de texte.
 
 #### ui.R
@@ -167,9 +175,10 @@ output$txtCommune <- renderText({
     paste(fComm$idcomtxt, fComm$idcom, fComm$artcom0920)
 })
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/602a3ea312be829aca7146e5563c001cdd33e823)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/602a3ea312be829aca7146e5563c001cdd33e823) (602a3ea312be829aca7146e5563c001cdd33e823)
 
 ### Ajoute la légende
+![](files/snapshots/legende.png)
 
 #### server.R
 Pour la légende, on utilise simplement de l'HTML stylisé, plutôt que la légende du plot.
@@ -195,19 +204,21 @@ tagList(
 ```
 On peut faire du HTML assez avancé avec R Shiny !
 
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/9c2ab647d7d7376fa84ee19b3239822260933d77)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/9c2ab647d7d7376fa84ee19b3239822260933d77) (9c2ab647d7d7376fa84ee19b3239822260933d77)
 
 ## Charte
 ### Titre avec couleurs cerema
+![](files/snapshots/couleurs.png)
+
 Ici, on intègre un élément de charte graphique Cerema, notamment la palette graphique de l'établissement au format JSON.
 
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/c1868418f645a374a8bfda9a3fb11bc0d72a18ec)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/c1868418f645a374a8bfda9a3fb11bc0d72a18ec) (c1868418f645a374a8bfda9a3fb11bc0d72a18ec)
 
 ## Contexte (#2)
 ###  Ajoute la surface artificialisée totale
 On ajoute une nouvelle information en texte.
 
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/9c6f9bed953ea15b948fa371a1d988df5acd27ee)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/9c6f9bed953ea15b948fa371a1d988df5acd27ee) (9c6f9bed953ea15b948fa371a1d988df5acd27ee)
 
 ## `reactive` (#1)
 ###  Ajout de reactive `fComm`
@@ -227,10 +238,11 @@ fComm()$artcom0920
 fComm()$nafart0920
 ```
 
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/739307b7430ab0d52f3c241fd16d4404c80c927b)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/739307b7430ab0d52f3c241fd16d4404c80c927b) (739307b7430ab0d52f3c241fd16d4404c80c927b)
 
 ## Carto
 ###  Ajoute la carte leaflet
+![](files/snapshots/carte.png)
 
 #### ui.R
 ```{r eval = FALSE}
@@ -244,9 +256,10 @@ output$mymap <- renderLeaflet({
             addTiles(group = "OSM")
 })
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/5e5be7cf03e9ad4d145c292477d958af00f76904)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/5e5be7cf03e9ad4d145c292477d958af00f76904) (5e5be7cf03e9ad4d145c292477d958af00f76904)
 
 ###  Centre la carte sur PACA
+![](files/snapshots/paca.png)
 
 #### server.R
 Pour ajuster la carte sur PACA, on utile la fonction `fitBounds`.
@@ -264,9 +277,11 @@ output$mymap <- renderLeaflet({
                       lat2 = bb[4])
     })
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/593b2972d14ee8f0f044fb43b2abc41932c4b1ab)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/593b2972d14ee8f0f044fb43b2abc41932c4b1ab) (593b2972d14ee8f0f044fb43b2abc41932c4b1ab)
 
 ### Ajoute les fonds de carte
+![](files/snapshots/fonds.png)
+
 Ajoutons davantage de fonds cartos, notamment ceux de l'IGN : orthophoto, Plan IGN.
 
 #### server.R
@@ -294,9 +309,11 @@ output$mymap <- renderLeaflet({
             fitBounds(lng1 = bb[1], lat1 = bb[2], lng2 = bb[3], lat2 = bb[4])
 })
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/fb67dcc4b87bc13a8cb81847be5c4d5aee1e2b95)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/fb67dcc4b87bc13a8cb81847be5c4d5aee1e2b95) (fb67dcc4b87bc13a8cb81847be5c4d5aee1e2b95)
 
 ###  Coordonnées au clic
+![](files/snapshots/verbatim.png)
+
 Pour trouver les coordonnées au clic, on utile un mécanisme de sélection basé sur input, notamment input$mymap.
 
 > A noter que l'on peut aussi réagir au clic sur une entité (`input$mymap_shape_click`), voire au passage (`input$mymap_shape_mouseover`). [Voir à ce titre la page dédiée sur R Leaflet](https://rstudio.github.io/leaflet/shiny.html#inputsevents).
@@ -312,7 +329,7 @@ output$foo <- renderPrint({
     input$mymap_click
 })
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/a9fd41bd65be309d9a5c9e37835bad164ee9b37c)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/a9fd41bd65be309d9a5c9e37835bad164ee9b37c) (a9fd41bd65be309d9a5c9e37835bad164ee9b37c)
 
 ## `reactive` (#1)
 ###  Rend codeInsee reactive
@@ -320,7 +337,7 @@ Le code INSEE est récupéré dynamiquement après un clic sur la carte.
 
 On rend le code INSEE reactive car il sera utilisé à plusieurs endroits : [ici](https://github.com/datagistips/shiny-artif-app/commit/1edc95aebfe35df74ca77370b78dc1d0402157a6#diff-ee89f65a0b4e0dccabce1672d6d689b4e2b6ca51ea1e746bdda1eca94aaa6e0fR252) ou encore [là](https://github.com/datagistips/shiny-artif-app/commit/1edc95aebfe35df74ca77370b78dc1d0402157a6#diff-ee89f65a0b4e0dccabce1672d6d689b4e2b6ca51ea1e746bdda1eca94aaa6e0fR276)
 
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/4ac477bd273eaf5db7b0511764c9555182ef423e)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/4ac477bd273eaf5db7b0511764c9555182ef423e) (4ac477bd273eaf5db7b0511764c9555182ef423e)
 
 ### Ajoute le reactive
 On peut créer des reactive en cascade, comme ici, pour `fComm()` qui s'appuie sur `codeInsee()`
@@ -340,13 +357,13 @@ myStream <- flux %>% makeStream(codeInsee())
 ```
 ► [Voir la ligne de code](https://github.com/datagistips/shiny-artif-app/commit/f3d3ffb842c07aaa67a9e4c48b922e8b4fa858dc#diff-ee89f65a0b4e0dccabce1672d6d689b4e2b6ca51ea1e746bdda1eca94aaa6e0fR174)
 
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/f3d3ffb842c07aaa67a9e4c48b922e8b4fa858dc)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/f3d3ffb842c07aaa67a9e4c48b922e8b4fa858dc) (f3d3ffb842c07aaa67a9e4c48b922e8b4fa858dc)
 
 ## Refactoring (#1)
 ###  Fix : ajoute req
 Quand les données ne sont pas encore chargées, on peut avoir un rendu bizarre avec un message d'erreur.
 
-![](files/error.png)
+![](files/snapshots/error.png)
 
 Du coup, on introduit la fonction `req` (pour 'requiert') qui exécute la suite seulement si la condition est réalisée :
 ```{r eval = FALSE}
@@ -357,10 +374,12 @@ fComm <- reactive({
     return(fComm)
 })
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/115ac4ea9c236d74fcbfd1cb2d48d3ae6309b063)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/115ac4ea9c236d74fcbfd1cb2d48d3ae6309b063) (115ac4ea9c236d74fcbfd1cb2d48d3ae6309b063)
 
 ## Carto (#2)
 ###  Ajoute un marqueur
+![](files/snapshots/marqueur.png)
+
 On crée un proxy à la carte pour réaliser plus tard des actions sur celle-ci (zoomer, ajouter des éléments cartos) sans avoir à recalculer la carte (appelée mymap) à chaque fois :
 ```{r eval = FALSE}
 proxy <- leafletProxy("mymap")
@@ -378,9 +397,11 @@ observe({
         addMarkers(data = myComm %>% st_centroid)
 })
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/5821ff9c63199ec0bae647a5874f2080bb9d3d5a)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/5821ff9c63199ec0bae647a5874f2080bb9d3d5a) (5821ff9c63199ec0bae647a5874f2080bb9d3d5a)
 
 ###  Ajoute le contour de la commune
+![](files/snapshots/contour.png)
+
 On ajoute le contour de la commune (c'est plus sympa) :
 ```{r eval = FALSE}
 proxy %>% 
@@ -397,9 +418,11 @@ proxy %>%
                                                     fillOpacity = 0.1,
                                                     bringToFront = TRUE))
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/9b4455e5213c849edcdad0a9d2f905f377f2f84a)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/9b4455e5213c849edcdad0a9d2f905f377f2f84a) (9b4455e5213c849edcdad0a9d2f905f377f2f84a)
 
 ### Va vers la commune
+![](files/snapshots/goto.png)
+
 Le marqueur s'affiche, le contour aussi, mais parfois la commune semble loin, lo i n, l o    i   n
 
 Du coup, petite astuce ergonomique : au clic, on va automatiquement vers la commune cliquée :
@@ -411,9 +434,11 @@ proxy %>%
                 lng2 = as.numeric(bb$xmax),
                 lat2 = as.numeric(bb$ymax))
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/404f64ab1fbd9fe00dd9da0634faf407007278b5)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/404f64ab1fbd9fe00dd9da0634faf407007278b5) (404f64ab1fbd9fe00dd9da0634faf407007278b5)
 
 ###  La liste déroulante permet d'aller vers une commune
+![](files/snapshots/liste-goto.png)
+
 On peut même changer le comportement de la liste déroulante utilisée au début pour afficher les stats ([voir cette ligne](https://github.com/datagistips/shiny-artif-app/commit/64c7a25268157cf832c9b57dc71b7dfffd663d9e#diff-ee89f65a0b4e0dccabce1672d6d689b4e2b6ca51ea1e746bdda1eca94aaa6e0fR73)) pour aller automatiquement vers la commune cliquée :
 ```{r eval = FALSE}
 observeEvent(input$communes, {
@@ -425,15 +450,19 @@ observeEvent(input$communes, {
 
 C'est aussi l'occasion d'introduire `observeEvent` qui 'écoute' les évènements, et qui, ici déclenche une action lorsqu'on choisit un élément dans la liste des communes (`input$communes`)
 
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/d295c184cd8801dfdcc4befb414d98ea8c0d4ea9)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/d295c184cd8801dfdcc4befb414d98ea8c0d4ea9) (d295c184cd8801dfdcc4befb414d98ea8c0d4ea9)
 
 ###  Ajoute l'élément vide à la liste des communes
+![](files/snapshots/empty-element.png)
+
 Généralement, le premier élément d'une liste est une instruction type 'Veuillez choisir une commune'
 
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/4e5c6628148bb98841d8468d10dea8a69b2e5c6d)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/4e5c6628148bb98841d8468d10dea8a69b2e5c6d) (4e5c6628148bb98841d8468d10dea8a69b2e5c6d)
 
 ## Refactoring (#2)
 ###  Précise qu'il faut cliquer sur la carte pour afficher les stats
+![](files/snapshots/message.png)
+
 Au lieu d'utiliser `req` ([voir ce commit](https://github.com/datagistips/shiny-artif-app/commit/115ac4ea9c236d74fcbfd1cb2d48d3ae6309b063)) qui conditionne l'affichage à la sélection d'une commune, nous pouvons générer un message pour préciser qu'il faut cliquer sur la carte lorsqu'aucune commune n'a été cliquée.
 
 Si aucune commune n'est sélectionnée : valeur nulle, alors on affiche ce message ([Voir la ligne de code](https://github.com/datagistips/shiny-artif-app/commit/56fd55bfa4cc066af658f7c779398c95c8276275?diff=split#diff-ee89f65a0b4e0dccabce1672d6d689b4e2b6ca51ea1e746bdda1eca94aaa6e0fR202-R203))
@@ -442,12 +471,12 @@ Si aucune commune n'est sélectionnée : valeur nulle, alors on affiche ce messa
 if(is.null(codeInsee())) return(tagList(icon("mouse-pointer"), "Cliquez sur la carte pour afficher les statistiques"))
 ```
 
-![](files/message.png)
-
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/56fd55bfa4cc066af658f7c779398c95c8276275)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/56fd55bfa4cc066af658f7c779398c95c8276275) (56fd55bfa4cc066af658f7c779398c95c8276275)
 
 ## Dataviz (#2)
 ### Ajoute la treemap et supprime la légende
+![](files/snapshots/treemap.png)
+
 Tiens, comme on y est, pourquoi pas ajouter une treemap.
 
 #### ui.R
@@ -462,7 +491,7 @@ output$treemap <- renderPlotly({
     flux %>% makeTreemap(codeInsee())  
 })
 ```
-► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/1edc95aebfe35df74ca77370b78dc1d0402157a6)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/1edc95aebfe35df74ca77370b78dc1d0402157a6) (1edc95aebfe35df74ca77370b78dc1d0402157a6)
 
 ## Refactoring (#3)
 ### Sépare en `ui.R`, `server.R` et `global.R`
@@ -477,5 +506,4 @@ Les variables contenues dans `global.R` deviennent automatiquement globales.
 
 Il n'y a alors plus besoin d'utiliser la double flèche d'assignation des variables globales dans `global.R` (précédemment `monNom <<- "Mathieu"`). On a donc `monNom <- "Mathieu"` dans `global.R`
 
-► [Voir cette version](81991cf6ba1a4abef9df951bcdcc1858d97b6815)
--->
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/81991cf6ba1a4abef9df951bcdcc1858d97b6815) (81991cf6ba1a4abef9df951bcdcc1858d97b6815)

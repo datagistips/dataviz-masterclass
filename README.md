@@ -22,3 +22,7 @@ Ils sont importants à parcourir avant de s'atteler au [notebook plus spécifiqu
 ## Données
 [Données artificialisation du Cerema](DATA.md)
 
+## Licence
+CC-BY-NC-SA  
+Crédits : Mathieu Rajerison & Cerema
+

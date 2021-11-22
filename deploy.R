@@ -12,7 +12,7 @@ options(warn=-1)
 ## SETTINGS -----------------
 PLATFORM <- "prod"
 APP_DIR         <<- "shinyapp"
-APP_NAME        <<- "shiny-artif"
+APP_NAME        <<- "artif0920"
 TOKEN_RSCONNECT <<- rjson::fromJSON(file="rsconnect.json")
 
 ## PLATFORMS -----------

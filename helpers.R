@@ -42,7 +42,7 @@
 
 deploy_app <- function(app_name, APP_DIR, TOKEN_RSCONNECT, launch_browser = TRUE) {
   message("Mise a jour de l'application ", app_name)
-  rsconnect::setAccountInfo(name   = 'cerema-med',
+  rsconnect::setAccountInfo(name   = 'datagistips',
                             token  = TOKEN_RSCONNECT$token,
                             secret = TOKEN_RSCONNECT$secret)
   rsconnect::deployApp(appName = app_name, appDir = APP_DIR, account="cerema-med", forceUpdate = T, launch.browser = launch_browser)

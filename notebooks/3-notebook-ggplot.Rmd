@@ -87,6 +87,7 @@ Mais les couleurs ne sont pas forcément encore tops !..
 Nous utilisons la modélisation de couleurs HCL (pour Hue Chroma Luminance).
 
 En HCL, une couleur est définie selon trois paramètres :
+
 - **Hue**, qui définit la teinte (bleue, rouge, ...) d'une couleur
 - **Chroma** son côté coloré (colourfulness)
 - **Luminance** sa luminosité
@@ -120,9 +121,9 @@ colorGrey    <- hcl(h = 0,
                     l = 80, fixup = TRUE)
 
 myPalette <- c("blue" = colorBlue,
-                    "red" = colorRed,
-                    "magenta" = colorMagenta,
-                    "grey" = colorGrey)
+               "red" = colorRed,
+               "magenta" = colorMagenta,
+               "grey" = colorGrey)
 ```
 
 ### Assistants

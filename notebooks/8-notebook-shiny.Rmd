@@ -52,9 +52,27 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 - `ui` est la partie destinée à accueillir les éléments d'interface (esthétique)
-- `server` est la partie dans laquelle seront définis les mécanismes d'interaction, d'interrogation et de représentation des données.
+- `server` est la partie dans laquelle seront définis les mécanismes d'interaction, d'interrogation et de représentation des données. La partie `server` réagit aux contrôles (slider, boutons, ...) définis dans `ui`
 
-> En quelque sorte, par analogie avec un modèle MVC (Modèle Vue Contrôleur), ui concerne la Vue et server le Contrôleur.
+![](files/ui-server/1.jpg)
+
+Dans l'exemple d'application de base proposée par RStudio, le plot réagit au nombre de bins (barres) défini par un slider. Ainsi, on a cette interaction :
+
+![](files/ui-server/2.jpg)
+
+> En quelque sorte, par analogie avec un modèle MVC (Modèle Vue Contrôleur), `ui` concerne la Vue et `server` le Contrôleur.
+
+Dans tous les cas, on a cette modélisation pour les contrôles, sorties dans Shiny :
+
+![](files/ui-server/3.jpg)
+
+- un `renderStreamgraph` pourra réagir à un input de `ui`, et sera rendu dans `ui` sous la forme de `streamgraphOutput`
+- un `renderText` aura son pendant `textOutput` 
+- etc...
+
+Ce sont les mêmes conventions qui sont utilisées.
+
+On a des `inputs`, des fonctions `render`, et des `outputs`
 
 ► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/006bc70d801a290ef1771b69cd2ded14e0b12516) (006bc70d801a290ef1771b69cd2ded14e0b12516)
 

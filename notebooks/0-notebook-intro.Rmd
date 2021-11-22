@@ -32,7 +32,7 @@ output:
 [Covid-tracker](https://covidtracker.fr/)
 
 ### Le Data-Driven DJ de Brian Foo
-![](https://brianfoo.com/assets/works/two_trains.png)
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/118358642?h=8a59e78eff" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
 [Voir](https://datadrivendj.com/tracks/subway)
 

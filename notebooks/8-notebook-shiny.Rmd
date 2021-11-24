@@ -349,7 +349,7 @@ output$foo <- renderPrint({
 ```
 ► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/a9fd41bd65be309d9a5c9e37835bad164ee9b37c) (a9fd41bd65be309d9a5c9e37835bad164ee9b37c)
 
-## `reactive` (#1)
+## `reactive` (#2)
 ###  Rend codeInsee reactive
 Le code INSEE est récupéré dynamiquement après un clic sur la carte.
 

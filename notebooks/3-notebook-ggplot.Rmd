@@ -177,7 +177,7 @@ p + scale_fill_manual(
 ```
 
 ## Couleurs Cerema
-Nous aurions aussi pu choisir les couleurs de l'établissemnet.
+Nous aurions aussi pu choisir les couleurs de l'établissement.
 
 Lisons la palette de couleurs Cerema :
 ```{r warning=FALSE, message=FALSE}

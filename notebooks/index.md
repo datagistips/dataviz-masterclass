@@ -1,13 +1,15 @@
 # Dataviz masterclass
 <img src=https://raw.githubusercontent.com/datagistips/dataviz-masterclass/master/files/mois-de-linnovation-publique.png width=200px>
 
-Notebooks pour la création d'une application Shiny sur l'artificialisation, réalisés à l'occasion du [Mois de l'Innovation Publique 2021](https://www.modernisation.gouv.fr/mois-de-linnovation-publique/le-mois-du-numerique-au-cerema-le-numerique-au-service-de-lexpertise)
+Notebooks pour la création d'une application Shiny sur l'artificialisation.
+
+Ils ont été réalisés à l'occasion du [Mois de l'Innovation Publique 2021](https://www.modernisation.gouv.fr/mois-de-linnovation-publique/le-mois-du-numerique-au-cerema-le-numerique-au-service-de-lexpertise).
 
 <img src="https://raw.githubusercontent.com/datagistips/dataviz-masterclass/master/notebooks/files/shinyapp/gif/animation.gif" width='60%'>
 
 Application Shiny : https://datagistips.shinyapps.io/artif0920/
 
-Notebooks :
+### Notebooks
 
 0. [Introduction](0-notebook-intro.html)
 
@@ -31,9 +33,11 @@ Notebooks :
 
 ----
 Application créée à l'occasion du [Mois de l'Innovation Publique 2021](https://www.modernisation.gouv.fr/mois-de-linnovation-publique/le-mois-du-numerique-au-cerema-le-numerique-au-service-de-lexpertise)  
-[Répertoire github `dataviz-masterclass`](https://github.com/datagistips/dataviz-masterclass)  
-[Répertoire github de l'application Shiny](https://github.com/datagistips/shiny-artif0920-app)
 
-Licence : CC-BY-NC-SA  
+Codes :  
+- [Répertoire github parent](https://github.com/datagistips/dataviz-masterclass)  
+- [Répertoire github de l'application Shiny](https://github.com/datagistips/shiny-artif0920-app)
+
+Licence : Creative Commons BY-NC-SA  
 Crédits : Mathieu Rajerison & Cerema
 

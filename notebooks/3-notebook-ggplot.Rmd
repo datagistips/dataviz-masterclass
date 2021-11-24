@@ -128,7 +128,7 @@ myPalette <- c("blue" = colorBlue,
 
 ### Assistants
 A savoir que la librairie colorspace intègre un assistant pour choisir les couleurs dans un espace HCL :
-```{r include=FALSE, eval = FALSE}
+```{r eval = FALSE}
 hclcolorpicker
 ```
 
@@ -138,6 +138,7 @@ Testons notre palette :
 ```{r}
 demoplot(myPalette, "bar")
 ```
+
 Voici une représentation des couleurs dans l'espace HCL :
 ```{r}
 hclplot(myPalette)

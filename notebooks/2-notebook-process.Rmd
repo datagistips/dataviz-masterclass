@@ -25,9 +25,15 @@ myCols
 ```
 
 ## Transformation du format wide vers long
-Nous utiliserons **ggplot2** pour représenter les données. Celui-ci accepte des données au format long et non wide.
+Nous utiliserons **ggplot2** pour représenter les données. Nous aurons besoin, avant d'utiliser les données, de passer d'un format wide (en largeur) à un format long (en longueur).
 
-Voici la différence entre un fichier de type wide et un fichier de type long :
+En effet, les noms de colonnes, comme `art19hab20` ou `art13mix14` portent en eux des attributs : type de flux, et année du flux, que nous aimerions bien voir apparaître dans les cellules de notre tableau.
+
+Par exemple, pour `art19hab20`, l'année du flux est l'année 2019 et concerne les flux vers l'habitat. On pourrait imaginer avoir une colonne pour l'année du flux, et une colonne pour son type.
+
+Pour `art13mix14`, le flux est concerne les flux d'artificialisation vers le mixte pour l'année 2013.
+
+Voici la différence entre un fichier de type _wide_ et un fichier de type _long_ :
 
 ### Wide
 
@@ -43,7 +49,18 @@ Voici la différence entre un fichier de type wide et un fichier de type long :
 | 1 | sport | squash |
 | 1 | ville | Aix-en-Provence |
 
-### Transformation au format long avec `gather`
+Dans notre cas, nous passerions de cette structure :
+| idcom | art19hab20 |
+| -- | -- |
+| 13001 | 111096 |
+
+à cette structure
+
+| idcom | year | type | value | 
+| -- | -- | -- | -- |
+| 13001 | 2019 | habitat | 111096 |
+
+### Transformation au format _long_ avec `gather`
 Prenons l'exemple d'Aix en Provence. Les données sont dans un format wide (le plus commun, avec les variables en colonnes) :
 ```{r}
 df <- flux %>% filter(idcom == "13001")

@@ -2795,8 +2795,11 @@ myCols</code></pre>
 </div>
 <div id="transformation-du-format-wide-vers-long" class="section level2">
 <h2>Transformation du format wide vers long</h2>
-<p>Nous utiliserons <strong>ggplot2</strong> pour représenter les données. Celui-ci accepte des données au format long et non wide.</p>
-<p>Voici la différence entre un fichier de type wide et un fichier de type long :</p>
+<p>Nous utiliserons <strong>ggplot2</strong> pour représenter les données. Nous aurons besoin, avant d’utiliser les données, de passer d’un format wide (en largeur) à un format long (en longueur).</p>
+<p>En effet, les noms de colonnes, comme <code>art19hab20</code> ou <code>art13mix14</code> portent en eux des attributs : type de flux, et année du flux, que nous aimerions bien voir apparaître dans les cellules de notre tableau.</p>
+<p>Par exemple, pour <code>art19hab20</code>, l’année du flux est l’année 2019 et concerne les flux vers l’habitat. On pourrait imaginer avoir une colonne pour l’année du flux, et une colonne pour son type.</p>
+<p>Pour <code>art13mix14</code>, le flux est concerne les flux d’artificialisation vers le mixte pour l’année 2013.</p>
+<p>Voici la différence entre un fichier de type <em>wide</em> et un fichier de type <em>long</em> :</p>
 <div id="wide" class="section level3">
 <h3>Wide</h3>
 <table>
@@ -2846,9 +2849,29 @@ myCols</code></pre>
 </tr>
 </tbody>
 </table>
+<p>Dans notre cas, nous passerions de cette structure : | idcom | art19hab20 | | – | – | | 13001 | 111096 |</p>
+<p>à cette structure</p>
+<table>
+<thead>
+<tr class="header">
+<th>idcom</th>
+<th>year</th>
+<th>type</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>13001</td>
+<td>2019</td>
+<td>habitat</td>
+<td>111096</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="transformation-au-format-long-avec-gather" class="section level3">
-<h3>Transformation au format long avec <code>gather</code></h3>
+<h3>Transformation au format <em>long</em> avec <code>gather</code></h3>
 <p>Prenons l’exemple d’Aix en Provence. Les données sont dans un format wide (le plus commun, avec les variables en colonnes) :</p>
 <pre class="r"><code>df &lt;- flux %&gt;% filter(idcom == &quot;13001&quot;)
 df[, c(&quot;idcom&quot;, &quot;idcomtxt&quot;, myCols)]</code></pre>

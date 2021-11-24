@@ -10,7 +10,7 @@ output:
 Dans ce notebook, nous allons voir comment intégrer la dimension spatiale (requêtes spatiales), en préparation de la dimension cartographique de l'application Shiny.
 
 ## Librairie sf
-Chargeons tidyverse, et la librairie sf
+Chargeons `tidyverse`, et la librairie `sf`
 ```{r message = FALSE, warning = FALSE}
 library(tidyverse)
 library(sf)
@@ -18,7 +18,7 @@ library(sf)
 
 ## Contours administratifs
 Lisons nos données administratives [AdminExpress](https://geoservices.ign.fr/adminexpress#telechargement) en les reprojetant du Lambert 93 (EPSG:2154) vers le WGS84 (EPSG:4326) :
-```{r}
+```{r eval=FALSE}
 comms <- st_read("../data/COMMUNE_CARTO/COMMUNE_CARTO.shp") %>% 
   st_set_crs(2154) %>% 
   st_transform(4326)
@@ -26,9 +26,14 @@ comms <- st_read("../data/COMMUNE_CARTO/COMMUNE_CARTO.shp") %>%
 
 ## Export
 Exportons les données sur la Région Sud pour un usage ultérieur, dans l'application Shiny par exemple :
-```{r}
+```{r eval=FALSE}
 saveRDS(comms %>% filter(INSEE_REG == 93), "comms.rds")
 ```
+
+```{r inlude=FALSE}
+comms <- readRDS("../data/comms.rds")
+```
+
 
 ## Coordonnées au clic
 Lorsqu'on cliquera sur la carte dans l'appli Shiny, les coordonnées seront retournées à l'utilisateur sous cette forme :
@@ -56,7 +61,7 @@ On intersecte les communes avec le point :
 i <- st_intersects(comms, pt)
 ```
 
-On détermine la commune au point :
+On détermine la commune localisée au point :
 ```{r}
 w <- which(sapply(i, function(x) length(x) != 0))
 codeInsee <- comms$INSEE_COM[w]
@@ -74,7 +79,7 @@ getCommCenter <- function(comms, coords) {
 }
 ```
 
-Utilisons par exemple la fonction pour trouver la commune qui est au point de coordonnées `5.398602, 43.53609` :
+Utilisons par exemple la fonction pour trouver la commune qui se situe au point de coordonnées `5.398602, 43.53609` :
 ```{r}
 comms %>% getCommCenter(c(5.398602, 43.53609))
 ```

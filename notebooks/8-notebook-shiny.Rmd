@@ -15,7 +15,7 @@ Nous partons d'une représentation assez basique (poser les bases) vers l'ajout 
 Cette animation montre l'évolution de l'appli depuis le premier commit jusqu'au dernier :
 ![](files/shinyapp/gif/animation.gif)
 
-Le code de l'application est accessible dans le répertoire github [shiny-artif-app](https://github.com/datagistips/shiny-artif-app/blob/master/README.md).
+Le code de l'application est accessible dans le répertoire github [shiny-artif-app](https://github.com/datagistips/shiny-artif0920-app).
 
 ## Préambule
 ### Template de base

@@ -25,14 +25,15 @@ Notebooks :
 
 7. [Treemap](7-notebook-treemap.html)
 
-8. [▶ Création de l'appli Shiny](8-notebook-shiny.html) 
+8. [▶ Création de l'appli Shiny](8-notebook-shiny.html)
 
 9. [Réflexions sur la dataviz](9-notebook-réflexions.html)
 
 ----
 Application créée à l'occasion du [Mois de l'Innovation Publique 2021](https://www.modernisation.gouv.fr/mois-de-linnovation-publique/le-mois-du-numerique-au-cerema-le-numerique-au-service-de-lexpertise)  
+[Répertoire github `dataviz-masterclass`](https://github.com/datagistips/dataviz-masterclass)  
+[Répertoire github de l'application Shiny](https://github.com/datagistips/shiny-artif0920-app)
 
 Licence : CC-BY-NC-SA  
 Crédits : Mathieu Rajerison & Cerema
 
-[Voir le répertoire parent `dataviz-masterclass`](https://github.com/datagistips/dataviz-masterclass)  

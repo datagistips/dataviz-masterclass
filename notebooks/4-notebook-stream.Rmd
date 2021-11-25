@@ -37,7 +37,7 @@ df <- flux %>% getStatsFlux("13001")
 ```
 
 Réalisons le streamgraph sur Aix-en-Provence :
-```{r}
+```{r warning=FALSE}
 library(streamgraph)
 
 # L'ordre des inverse dans les streamgraphs
@@ -50,6 +50,8 @@ df %>%
   sg_fill_manual(rev(myPalette))
 
 ```
+
+> `factor` permet de définir l'ordre d'affichage des entités. Et nous utilisons `rev(myPalette)` car streamghraph inverse la palette.
 
 ## Fonction `makeStream`
 Nous pouvons créer une fonction qui retourne le streamgraph de n'importe quelle commune :
@@ -72,6 +74,11 @@ makeStream <- function(flux, codeInsee) {
 Voici une utilisation de la fonction `makeStream` sur Marseille :
 ```{r}
 flux %>% makeStream("13055")
+```
+
+Ou sur Toulon :
+```{r}
+flux %>% makeStream("83137")
 ```
 
 Cette fonction nous sera bien utile dans l'application Shiny.

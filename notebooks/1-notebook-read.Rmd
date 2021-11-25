@@ -17,7 +17,7 @@ Le fichier à télécharger s'appelle `obs_artif_conso_com_2009_2020_V2.csv` et 
 On le télécharge dans le dossier `data` de notre répertoire de travail.
 
 ## Chargement des librairies
-Chargeons la fameuse librairie tidyverse. Celle-ci contient des librairies essentielles telles que dplyr, magrittr (pour les pipes `%>%`),...
+Chargeons la fameuse librairie 'couteau suisse' `tidyverse.` Celle-ci contient des librairies essentielles telles que dplyr, magrittr (pour les pipes `%>%`),...
 ```{r message = FALSE, warning = FALSE}
 library(tidyverse)
 ```
@@ -30,7 +30,7 @@ glimpse(flux)
 ```
 
 ## Contrôle
-Un petit souci : certaines colonnes sont de type caractères, alors qu'elles devraient être de type numérique. C'est le cas de surfcom20, par exemple.
+Un petit souci : certaines colonnes sont de type caractères, alors qu'elles devraient être de type numérique. C'est le cas de `surfcom20`, par exemple.
 
 ```{r}
 class(flux$surfcom20)
@@ -40,7 +40,7 @@ Listons les colonnes de type caractères :
 ```{r}
 sapply(names(flux), function(x) class(flux[[x]]) == "character") %>% which %>% {names(flux)[.]}
 ```
-Les colonnes artcom0920, artpop1217 et surfcom20 devraient être de type numérique.
+Les colonnes `artcom0920`, `artpop1217` et `surfcom20` devraient être de type numérique.
 
 Recherchons les valeurs non numériques dans ces colonnes :
 ```{r}

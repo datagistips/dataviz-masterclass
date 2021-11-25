@@ -1,4 +1,4 @@
-# Artificialisation
+# Masterclass Dataviz autour de l'artificialisation
 
 <img src=https://raw.githubusercontent.com/datagistips/dataviz-masterclass/master/files/mois-de-linnovation-publique.png width=300px>
 

@@ -51,7 +51,7 @@ df %>%
 
 ```
 
-> `factor` permet de définir l'ordre d'affichage des entités. Et nous utilisons `rev(myPalette)` car streamghraph inverse la palette.
+> `factor` permet de définir l'ordre d'affichage des entités. Et nous utilisons `rev(myPalette)` car `streamgraph` inverse la palette.
 
 ## Fonction `makeStream`
 Nous pouvons créer une fonction qui retourne le streamgraph de n'importe quelle commune :

@@ -7,9 +7,9 @@ output:
     toc_depth: 2
     toc_float: true
 ---
-Dans ces notebooks, nous nous intéresserons aux flux d'artificialisation vers différents postes : habitat, activité,... au fil des ans, sur la période 2009 à 2020. Ces différents notebooks visent à poser les bases d'une application Shiny d'exploration de ces données.
+Dans ces notebooks, nous nous intéresserons aux flux d'artificialisation vers différents postes : habitat, activité,... au fil des ans, sur la période 2009 à 2020. 
 
-Dans ce notebook, nous allons explorer le fichier des données d'artificialisation
+Ces différents notebooks visent à poser les bases d'une application Shiny d'exploration de ces données.
 
 ## Téléchargement de la donnée
 Le fichier à télécharger s'appelle `obs_artif_conso_com_2009_2020_V2.csv` et se situe à l'adresse [https://cerema.app.box.com/v/pnb-action7-indicateurs-ff/folder/149684581362](https://cerema.app.box.com/v/pnb-action7-indicateurs-ff/folder/149684581362)
@@ -17,7 +17,7 @@ Le fichier à télécharger s'appelle `obs_artif_conso_com_2009_2020_V2.csv` et 
 On le télécharge dans le dossier `data` de notre répertoire de travail.
 
 ## Chargement des librairies
-Chargeons la fameuse librairie 'couteau suisse' `tidyverse.` Celle-ci contient des librairies essentielles telles que dplyr, magrittr (pour les pipes `%>%`),...
+Chargeons la fameuse librairie 'couteau suisse' `tidyverse`. Celle-ci contient des librairies essentielles telles que dplyr, magrittr (pour les pipes `%>%`),...
 ```{r message = FALSE, warning = FALSE}
 library(tidyverse)
 ```

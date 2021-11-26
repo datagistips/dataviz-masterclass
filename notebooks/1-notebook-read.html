@@ -246,8 +246,8 @@ div.tocify {
 </div>
 
 
-<p>Dans ces notebooks, nous nous intéresserons aux flux d’artificialisation vers différents postes : habitat, activité,… au fil des ans, sur la période 2009 à 2020. Ces différents notebooks visent à poser les bases d’une application Shiny d’exploration de ces données.</p>
-<p>Dans ce notebook, nous allons explorer le fichier des données d’artificialisation</p>
+<p>Dans ces notebooks, nous nous intéresserons aux flux d’artificialisation vers différents postes : habitat, activité,… au fil des ans, sur la période 2009 à 2020.</p>
+<p>Ces différents notebooks visent à poser les bases d’une application Shiny d’exploration de ces données.</p>
 <div id="téléchargement-de-la-donnée" class="section level2">
 <h2>Téléchargement de la donnée</h2>
 <p>Le fichier à télécharger s’appelle <code>obs_artif_conso_com_2009_2020_V2.csv</code> et se situe à l’adresse <a href="https://cerema.app.box.com/v/pnb-action7-indicateurs-ff/folder/149684581362">https://cerema.app.box.com/v/pnb-action7-indicateurs-ff/folder/149684581362</a></p>
@@ -255,7 +255,7 @@ div.tocify {
 </div>
 <div id="chargement-des-librairies" class="section level2">
 <h2>Chargement des librairies</h2>
-<p>Chargeons la fameuse librairie tidyverse. Celle-ci contient des librairies essentielles telles que dplyr, magrittr (pour les pipes <code>%&gt;%</code>),…</p>
+<p>Chargeons la fameuse librairie ‘couteau suisse’ <code>tidyverse</code>. Celle-ci contient des librairies essentielles telles que dplyr, magrittr (pour les pipes <code>%&gt;%</code>),…</p>
 <pre class="r"><code>library(tidyverse)</code></pre>
 </div>
 <div id="lecture-des-données" class="section level2">
@@ -361,7 +361,7 @@ div.tocify {
 </div>
 <div id="contrôle" class="section level2">
 <h2>Contrôle</h2>
-<p>Un petit souci : certaines colonnes sont de type caractères, alors qu’elles devraient être de type numérique. C’est le cas de surfcom20, par exemple.</p>
+<p>Un petit souci : certaines colonnes sont de type caractères, alors qu’elles devraient être de type numérique. C’est le cas de <code>surfcom20</code>, par exemple.</p>
 <pre class="r"><code>class(flux$surfcom20)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p>Listons les colonnes de type caractères :</p>
@@ -369,7 +369,7 @@ div.tocify {
 <pre><code>##  [1] &quot;idcom&quot;      &quot;idcomtxt&quot;   &quot;idreg&quot;      &quot;idregtxt&quot;   &quot;iddep&quot;     
 ##  [6] &quot;iddeptxt&quot;   &quot;epci20txt&quot;  &quot;aav2020&quot;    &quot;libaav2020&quot; &quot;artcom0920&quot;
 ## [11] &quot;artpop1217&quot; &quot;surfcom20&quot;</code></pre>
-<p>Les colonnes artcom0920, artpop1217 et surfcom20 devraient être de type numérique.</p>
+<p>Les colonnes <code>artcom0920</code>, <code>artpop1217</code> et <code>surfcom20</code> devraient être de type numérique.</p>
 <p>Recherchons les valeurs non numériques dans ces colonnes :</p>
 <pre class="r"><code>w &lt;- grep(&quot;^(-|[0-9]|\\.)*$&quot;, flux$artcom0920, perl = TRUE)
 flux$artcom0920[-w] %&gt;% unique</code></pre>

@@ -7,11 +7,11 @@ output:
     toc_depth: 3
     toc_float: true
 ---
-Dans ce notebook, nous allons réaliser un graphique assez simple avec ggplot.
+Dans ce notebook, nous allons réaliser un graphique assez simple avec `ggplot`.
 
 ## Lecture des données avec transformation
 
-Lisons les données de flux et rappelons la fonction getStatsFlux :
+Lisons les données de flux et rappelons la fonction `getStatsFlux` :
 ```{r warning = FALSE, message = FALSE}
 library(tidyverse)
 

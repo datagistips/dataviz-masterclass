@@ -553,7 +553,7 @@ source("helpers.R", encoding = "UTF-8")
 ► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/b6a508c9db407cdc98969b50b80867554978796c) (b6a508c9db407cdc98969b50b80867554978796c)
 
 ## Contexte
-On ajoute un fichier `footer.md` qui explique d'où vient l'application, donne les sources. 
+On ajoute un fichier [`footer.md`](https://github.com/datagistips/shiny-artif0920-app/blob/master/footer.md) qui explique d'où vient l'application, donne les sources. 
 
 On l'intègre avec la fonction `includeMarkdown`
 

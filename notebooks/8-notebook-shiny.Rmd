@@ -550,4 +550,17 @@ Nous faisons appel au fichier `helpers.R` au sein de `global.R`
 source("helpers.R", encoding = "UTF-8")
 ```
 
-[Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/b6a508c9db407cdc98969b50b80867554978796c) (b6a508c9db407cdc98969b50b80867554978796c)
+► [Voir cette version](https://github.com/datagistips/shiny-artif-app/commit/b6a508c9db407cdc98969b50b80867554978796c) (b6a508c9db407cdc98969b50b80867554978796c)
+
+## Contexte
+On ajoute un fichier `footer.md` qui explique d'où vient l'application, donne les sources. 
+
+On l'intègre avec la fonction `includeMarkdown`
+
+```{r eval = FALSE}
+tags$div(
+    includeMarkdown("footer.md"), 
+    style="font-size:0.8em")
+```
+
+► [Voir cette version](https://github.com/datagistips/shiny-artif0920-app/commit/d52adde3e3c68bd6e647443e5190630f75f5f9c9#diff-65704ad9823485af15425c156225c6a1aa8551dfcbb918cbb3781a4372684d62)
